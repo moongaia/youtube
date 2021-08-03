@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./app.css";
 import Search from "./components/search";
-import VideoList from "./components/videoList";
+import VideoList from "./components/video_list/videoList";
 
 function App() {
   const [videos, setVideos] = useState([]);
