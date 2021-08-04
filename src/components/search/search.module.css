@@ -1,0 +1,21 @@
+.search {
+  color: white;
+  background-color: skyblue;
+  text-align: center;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.input {
+  width: 500px;
+  height: 25px;
+}
+
+.button {
+  font-size: 18px;
+  background-color: white;
+}
