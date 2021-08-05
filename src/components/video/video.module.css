@@ -13,7 +13,7 @@
 .video {
   display: flex;
   align-items: center;
-  border: 1px solid lightblue;
+  border: 1px solid chocolate;
   cursor: pointer;
   transition: transform 250ms ease-in;
 }

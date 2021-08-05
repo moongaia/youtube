@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./video.module.css";
 
 //props.video, props.video.snippet
-const Video = ({ video, video: { snippet }, handleClick, display }) => {
+const Video = memo(({ video, video: { snippet }, handleClick, display }) => {
   const displayType = display === "list" ? styles.list : styles.grid;
   return (
     <li className={`${styles.container} ${displayType}`}>
@@ -19,6 +19,6 @@ const Video = ({ video, video: { snippet }, handleClick, display }) => {
       </div>
     </li>
   );
-};
+});
 
 export default Video;

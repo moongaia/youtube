@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Search from "./components/search/search";
 import VideoList from "./components/video_list/videoList";
 import styles from "./app.module.css";
@@ -8,24 +8,27 @@ function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const search = (query) => {
-    youtube
-      .search(query) //
-      .then((videos) => {
-        setVideos(videos);
-        setSelectedVideo(null);
-      });
-  };
-
   const clickVideo = (video) => {
     setSelectedVideo(video);
   };
+
+  const search = useCallback(
+    (query) => {
+      youtube
+        .search(query) //
+        .then((videos) => {
+          setVideos(videos);
+          setSelectedVideo(null);
+        });
+    },
+    [youtube]
+  );
 
   useEffect(() => {
     youtube
       .mostPopular() //
       .then((videos) => setVideos(videos));
-  }, []);
+  }, [youtube]);
 
   return (
     <div className={styles.app}>

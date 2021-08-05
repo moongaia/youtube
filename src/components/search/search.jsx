@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./search.module.css";
 
-const Search = ({ onSearch }) => {
+const Search = memo(({ onSearch }) => {
   const inputRef = React.createRef();
 
   const searchVideo = () => {
@@ -20,11 +20,12 @@ const Search = ({ onSearch }) => {
       searchVideo();
     }
   };
+  console.log("Header");
 
   return (
     <form className={styles.search}>
       <i className={`fab fa-youtube ${styles.logo}`}></i>
-      <span>YouTube</span>
+      <span>NuTube</span>
       <input
         ref={inputRef}
         type="text"
@@ -37,6 +38,6 @@ const Search = ({ onSearch }) => {
       </button>
     </form>
   );
-};
+});
 
 export default Search;
