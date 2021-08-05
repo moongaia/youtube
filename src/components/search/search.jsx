@@ -23,7 +23,7 @@ const Search = memo(({ onSearch }) => {
   console.log("Header");
 
   return (
-    <form className={styles.search}>
+    <header className={styles.search}>
       <div className={styles.logo} onClick={onClick}>
         <i className="fas fa-cloud"></i>
       </div>
@@ -38,7 +38,7 @@ const Search = memo(({ onSearch }) => {
       <button className={styles.button} onClick={onClick}>
         <i className="fas fa-search"></i>
       </button>
-    </form>
+    </header>
   );
 });
 
