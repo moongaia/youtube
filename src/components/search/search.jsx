@@ -24,13 +24,15 @@ const Search = memo(({ onSearch }) => {
 
   return (
     <form className={styles.search}>
-      <i className={`fab fa-youtube ${styles.logo}`}></i>
-      <span>NuTube</span>
+      <div className={styles.logo} onClick={onClick}>
+        <i className="fas fa-cloud"></i>
+      </div>
+      <div className={styles.title}>NuTube</div>
       <input
         ref={inputRef}
         type="text"
         className={styles.input}
-        placeholder="Search Videos"
+        placeholder="Search Videos..."
         onKeyPress={onKeyPress}
       />
       <button className={styles.button} onClick={onClick}>
